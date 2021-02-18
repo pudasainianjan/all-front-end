@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 200px;
+        height: 200px;
+        background-color: orangered;
+        transition-property: width;
+        transition-duration: 2s;
+        /* transition-delay: 1s; */
+        transition-timing-function: ease;
+        transition-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);  /*first two arg speecify start of effect and second two end of effect*/
+        transition: width 1s ease-in,background-color 3s ease-in-out;
+        transition: all 3s; /*if we have same transition in all*/
+    }
+    
+    .box:hover{
+        width: 400px;
+        background-color: green;
+    }
+</style>
+<body>
+    
+    <div class="box"></div>
+    
+</body>
+</html>

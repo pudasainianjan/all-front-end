@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+</head>
+<style>
+    .container{
+        height: 700px;
+        margin-top: 50px;
+        /* padding: 20px 0; */
+        background-color: #f19861;
+        display: flex;
+        flex-direction: row;
+        /*flex-direction: column;  /*wehn column main axis becomes vertical and cross axis is hirizontal*/
+        /*flex-wrap: nowrap; /*default*/
+        flex-wrap: wrap; /*wraps item when the container dont have enough space*/
+        flex-flow: row wrap;  /*short way direction and wrap*/
+        justify-content: space-evenly;  /*flex-start,center, flex-end places items on right of container,space-betwen,space-around,space,evently*/
+        align-items: stretch; /*default: so items stretches top to bottom*/
+        align-items: flex-end;  /*stretch, flex-start , flex-end, center, baseline*/
+        align-content: stretch;  /*stretch default,center,flex-end ,space-around,between and evenly*/
+        align-content: flex-start;
+    }
+    .item{
+        width: 70px;
+        padding: 30px;
+        margin: 10px;
+        background-color: #06af8f;
+        text-align: center;
+        font-size: 30px;
+        color: white;
+    }
+  
+    
+</style>
+<body>
+
+    <div class="container">
+        <div class="item item-1">A</div>
+        <div class="item item-2">B</div>
+        <div class="item item-3">C</div>
+        <div class="item item-4">D</div>
+        <div class="item item-5">E</div>
+    </div>
+    
+</body>
+</html>

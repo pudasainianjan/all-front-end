@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicit/Implicit Grids</title>
+</head>
+<style>
+   
+    .container{
+        width: 90%;
+        background-color: #efefef;
+        margin: auto;
+        display: grid;
+        grid-template-columns: min-content 1fr 1fr minmax(150px,300px);
+        grid-template-rows: 150px 150px;
+        grid-gap:1rem;
+  
+    }
+
+    .item{
+        font-size: 2rem;
+        background-color: royalblue;
+        color: #fff;
+        text-align: center;
+    }
+
+
+
+
+</style>
+<body>
+    <div class="container">
+        <div class="item">Lorem, ipsum dolor.item 1</div>
+        <div class="item">item 2</div>
+        <div class="item">item 3</div>
+        <div class="item">item 4</div>
+        <div class="item">item 5</div>
+        <div class="item">item 6</div>
+        <div class="item">item 7</div>
+        <div class="item">item 8</div>
+    </div>
+    
+</body>
+</html>

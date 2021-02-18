@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicit/Implicit Grids</title>
+</head>
+<style>
+    /*the grid we doesnt define is implicit grid they are auto created but if already we defined those grid manually, those are explicit grids*/
+    .container{
+        width: 600px;
+        background-color: #efefef;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,100px);
+        /*FOR IMPLICIT GRIDS*/
+
+
+        /* grid-auto-flow: column; *//*DEFAULT*/
+        /*grid-auto-rows: 150px;/*if grid-auto-flow is set to row then add:*/
+        
+        grid-auto-flow: column;  /*makes implicit rows to implicit cols*/  /*Default:row*/
+        /*if grid-auto-flow is set to columns then add:*/
+        grid-auto-columns: 150px;
+        grid-gap:1rem;
+    }
+
+    .item{
+        font-size: 2rem;
+        background-color: royalblue;
+        color: #fff;
+        text-align: center;
+    }
+
+
+
+</style>
+<body>
+    <div class="container">
+        <div class="item">item 1</div>
+        <div class="item">item 2</div>
+        <div class="item">item 3</div>
+        <div class="item">item 4</div>
+        <div class="item">item 5</div>
+        <div class="item">item 6</div>
+        <div class="item">item 7</div>
+        <div class="item">item 8</div>
+    </div>
+    
+</body>
+</html>

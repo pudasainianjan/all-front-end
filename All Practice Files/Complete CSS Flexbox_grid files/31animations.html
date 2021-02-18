@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+</head>
+<style>
+    .box{
+        width: 200px;
+        height: 200px;
+        position: relative;
+        background-color: orangered;
+        animation-name: anim; 
+        animation-duration: 4s;
+        animation-delay: 2s;
+        /* animation-iteration-count: 3; */  /*infinite*/
+        /* animation-direction: reverse; /* default=normal , forward and backward=alternate/alteernate-reverse */
+        animation-timing-function: cubic-bezier(0.1, 1, 0, 1);
+        animation-fill-mode: forwards ;  /*now after finishing animation, wont get back to initial positon*/
+        animation-fill-mode: backwards ; /*starts from on kyframe later*/
+        animation-fill-mode: both ;  
+        /*Short way*/
+        animation: anim 4s ease-in 2s infinite alternate both;
+        
+    }
+
+/*SYNTAX*/
+    @keyframes anim {
+        from{
+            /*start of animation */
+        }
+        to{
+            /*end of animation*/
+        }
+    }
+
+    /*Instead of from and to , % can also have middle part for animation, so use percentage*/
+    @keyframes anim {
+        0%{
+            /*start of animation */
+            left: 300px;
+            top: 0;
+            background-color: orangered;
+        }
+        25%{
+            left: 400px;
+            top: 0;
+            background-color: green;
+
+        }
+        50%{
+            left: 400px;
+            top: 400px;
+            background-color: goldenrod;
+
+        }
+        75%{
+            left: 0;
+            top: 400px;
+            background-color: royalblue;
+
+        }
+        100%{
+            /*end of animation*/
+            left: 0;
+            top: 300px;
+                background-color: orangered;
+            }
+    }
+  
+    
+</style>
+<body>
+    
+    <div class="box"></div>
+    
+</body>
+</html>

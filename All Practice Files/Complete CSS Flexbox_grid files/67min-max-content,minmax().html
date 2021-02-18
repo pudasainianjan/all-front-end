@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 90%;
+            background-color: #efefef;
+            margin: auto;
+            display: grid;
+            grid-template-columns: max-content 1fr 1fr 1fr; /*width of first col is required to display contain*/
+            grid-template-columns: min-content 1fr 1fr 1fr; /*width of first col is required to display contain and text is wrapped (width if width reequired to dispplay largest word in text)*/
+            grid-template-columns: min-content 1fr 1fr minmax(150px,300px); /*4 th col should be at least 150px and at most 300px(if enough space) */ 
+            grid-template-rows: 150px 150px;
+            grid-gap: 1rem;   
+            
+            
+        }
+
+
+        .item{
+            font-size: 2rem;
+            background-color: royalblue;
+            color: white;
+            text-align: center;  
+        }
+        
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">item-1 Lorem ipsum dolor sit.</div>
+        <div class="item">item-2</div>
+        <div class="item">item-3</div>
+        <div class="item">item-4</div>
+        <div class="item">item-5</div>
+        <div class="item">item-6</div>
+        <div class="item">item-7</div>
+        <div class="item">item-8</div>
+    </div>
+</body>
+</html>

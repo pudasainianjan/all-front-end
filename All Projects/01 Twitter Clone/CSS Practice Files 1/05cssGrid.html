@@ -1,0 +1,107 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS GRID</title>
+</head>
+
+<style>
+    .container{
+        width: 800px;
+        /* height: 600px; */
+        background-color: #ddd;
+        margin: 40px auto;
+        display: grid;  /*step(s) 1*/
+        grid-template-rows: 150px 150px;  /*2 rows of 150px*/
+        grid-template-columns: 150px 150px 150px; /*three cols of same size*/
+        grid-row-gap: 30px;  /*also called grid gutters*/
+        grid-column-gap: 50px ;
+        /*shorter way*/
+        grid-gap: 30px 50px; /*row col*/
+
+        grid-template-columns: 150px 150px auto; /*auto --->now third col will take all
+         available spaces in container */
+
+
+        /*freactional units insted of pixels is good*/
+        grid-template-columns: 1fr 2fr 1fr;  
+        grid-template-rows: 150px 1fr;  /*here second row takes height which is required to display content of row*/
+        /*repeat function*/
+        /* grid-template-columns: 50% repeat(2,1fr); */
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2,1fr);
+
+
+
+    }
+
+    .item{
+        padding: 30px;
+        font-size: 30px;
+        color: #fff;
+    }
+
+    .item-1{  /*move first to sixth item position*/
+        background-color: orangered ;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 3; /*because two rows have three imaginary lines*/
+        
+
+    }
+
+    .item-2{
+        background-color: olivedrab ;
+        /*shorter way for grid col/row start and end*/
+        grid-column: 2/3;
+        grid-row: 2/3;
+        /*even shorter way:*/
+        /*grid-area: 2/2/3/3;   /*starting column-line/starting-row-line and ending-col/ending-row*/
+        /*z-index: 10;/*it has hidden because of other element, but now came up to its position*/
+    }
+
+    .item-3{
+        background-color:  royalblue;
+        grid-column: 1/4;
+        /*but but but we are stretching to end of container..so just use -1 eg:*/
+        grid-column: 1/-1;
+        grid-row: 1/-1;
+
+    }
+
+    .item-4{
+        background-color: palevioletred;
+        
+    }
+
+    .item-5{
+        background-color: goldenrod;
+        grid-area: 3/3/4/4 ;
+    }
+
+    .item-6{
+        background-color: blueviolet;
+        /*using spanning insted of grid-column-start/end*/
+        /*Spanning*/
+        grid-column: 1/ span 3;
+    }
+
+
+</style>
+
+<body>
+<!-- SHORTCUT EMMET .container>.item.item-${item $}*6 -->
+<div class="container">
+    <div class="item item-1">item 1</div>
+    <div class="item item-2">item 2</div>
+    <div class="item item-3">item 3</div>
+    <div class="item item-4">item 4</div>
+    <div class="item item-5">item 5</div>
+    <div class="item item-6">item 6</div>
+    
+</div>
+
+
+</body>
+</html>

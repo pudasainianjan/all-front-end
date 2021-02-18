@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS FLEXBOX</title>
+</head>
+<style>
+    .container{
+        height: 700px;
+        margin-top: 50px;
+        /*padding: 20px 0;*/
+        background-color: #f19861;
+        display: flex;
+        /*flex-direction: row; /*sets direction of items around the main axix(x)*/
+        /* flex-direction: column; */  /*arranges in column*/
+        /* flex-wrap: nowrap; */ /*Default*/
+        flex-wrap: wrap;  /*items wraps down when no enough space */
+        flex-flow: row nowrap;  /*shortcut for direction and wrap*/
+        /*justify-content: flex-end; /*place item from right side of container*/
+        justify-content: space-evenly;  /*space-between, space-evenly main axis*/
+        align-items: stretch;  /*default value*/  /*works along cross axix top to boootm*/
+        align-items: center;  /*center || flex-start // end */
+        /*align-content: space-evenly; /* dedfault:stretch ||flex-start ||center */
+
+ }
+
+    .item{
+        width: 40px;
+        /* padding: 30px; */
+        margin: 10px;
+        background-color: #06af8f;
+        text-align: center;
+        font-size: 30px;
+        color: white;
+
+    }
+
+     .item-1{
+        /*font-size: 70px;*/
+        order:1;  /*first item will go last*/
+        flex-grow: 5;
+        
+    } 
+    .item-5{
+        width: 200px;
+        order: -1;
+       /* align-self: stretch;  /*default:auto */
+        /*flex-grow: 1; /*0 default*//*occupies as much space as it have values 1,2,3...*/
+        /*flex-shrink: 5;  /*Here item E will shrink 5 times faster than all the other items*//*0 -->item wont shrink*/  
+        /*flex-basis: 100px;  /*width of item E is 100px excluding padding,if changed to column then height will be 100px*/
+        flex:0 1 auto;  /*flex: grow shrink basis(height)*/
+    }
+
+</style>
+<body>
+    <div class="container">
+        <div class="item item-1">A</div>
+        <div class="item item-2">B</div>
+        <div class="item item-3">C</div>
+        <div class="item item-4">D</div>
+        <div class="item item-5">E</div>
+        
+    </div>
+    
+</body>
+</html>

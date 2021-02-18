@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions</title>
+</head>
+<style>
+    /*Four different transitions properties:hover
+    transition-property
+    transition-duration
+    transition-delay  
+    transition-timing-function
+    */
+    .box{
+        width: 200px;
+        height: 200px;
+        background-color: orangered;
+        transition-property: width;  /*effect when width is increasing */
+        transition-duration: 2s;
+        transition-delay: 1s;  /*hover and transition will start after 1s*/
+        transition-timing-function: cubic-bezier(.01,.98,.64,.32);  /*this allows to define different speeds of effect during transitions by default is ease search cubic beizer .com to use quickly*/
+        transition: width 1s 0.3s ease-in, background-color 5s;  /*<--SHORT WAY*//*width duration delay ...background color duration is 5s...*/
+        transition: all 1s;  /*use if transition and duration will be same for all properties*/ 
+    
+    }
+
+    .box:hover{
+        width: 400px;
+        background-color: green;
+    }
+
+    
+</style>
+<body>
+    <div class="box">
+
+    </div>
+    
+</body>
+</html>

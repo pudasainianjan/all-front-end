@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+</head>
+<style>
+    .container{
+        height: 700px;
+        margin-top: 50px;
+        /* padding: 20px 0; */
+        background-color: #f19861;
+        display: flex;
+        flex-direction: row;
+        /*flex-direction: column;  /*wehn column main axis becomes vertical and cross axis is hirizontal*/
+        /*flex-wrap: nowrap; /*default*/
+        flex-wrap: wrap; /*wraps item when the container dont have enough space*/
+        flex-flow: row nowrap;  /*short way direction and wrap*/
+        justify-content: space-evenly;  /*flex-start,center, flex-end places items on right of container,space-betwen,space-around,space,evently*/
+        align-items: center; /*default: so items stretches top to bottom*/
+
+    }
+    .item{
+        width: 70px;
+        /* padding: 30px; */
+        margin: 10px;
+        background-color: #06af8f;
+        text-align: center;
+        font-size: 30px;
+        color: white;
+    }
+
+    /*by default flex grow is 0, so itms do not grow when space is available, so we set flex grow to number*/
+
+    .item-1{
+        width: 200px;
+        order: 1;
+        flex-grow: 5;  /*growing rate of this is 5x than item 5*/
+    }
+    .item-5{
+        width: 200px;
+        order: -1;  /*lower value stands infront of other*/
+        /*align-self: auto; /*default:auto , means that it is set related to its parent flex containeer property*/
+        /*align-self: stretch; /*fleex-end,stretch,flex-start,centeer,baseline*/
+        flex-grow: 1 ;  /*default:0, allows itm to occupy available free space inside container, also dscribes how faster flex item will grow reelative to rest of the items*/
+        /*when flex grow is set to 1, it will start occupying free space in container*/
+        /*flex-shrink:0 ; /*default:1 ,opposite of flex grow, if 0--> items wont shrink*/
+        flex-basis: auto; /*default:auto , specifies actual length of the container ,width or height as length, dpeends on the flex direection of containeer*/
+        /*if fleex-dirction is column then its height is ovrwritteen or row, width is ovrwwriien*/
+        flex-basis: 100px;
+        /*short way*/
+        flex: 5 1 auto;  /*flex: grow shrink basis*/
+    }
+    
+    
+    
+</style>
+<body>
+
+    <div class="container">
+        <div class="item item-1">A</div>
+        <div class="item item-2">B</div>
+        <div class="item item-3">C</div>
+        <div class="item item-4">D</div>
+        <div class="item item-5">E</div>
+    </div>
+    
+</body>
+</html>
